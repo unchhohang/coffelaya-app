@@ -1,0 +1,36 @@
+#sn {
+    width: 50px;
+}
+
+#item {
+    width: 150px;
+}
+
+#rate {
+    width: 80px;
+}
+
+#qty {
+    width: 80px;
+}
+
+#total {
+    width: 100px;
+}
+
+.itemInput {
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+}
+
+#table-container {
+    overflow: auto;
+    max-height: 350px;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}

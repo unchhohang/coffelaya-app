@@ -1,0 +1,11 @@
+.navSide {
+    height: 700px;
+    background-color: rgb(79, 79, 207);
+    border-radius: 14px;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+

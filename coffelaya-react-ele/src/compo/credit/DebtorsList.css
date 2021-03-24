@@ -1,0 +1,22 @@
+.debtorList {
+    background-color: #FFCAAD;
+    overflow-y: auto;
+    height: 80%;
+}
+
+#debtorName {
+    margin: 10px;
+    width: 100px;
+    color: black;
+    font-size: 15px;
+    border-radius: 2px;
+    border: none;
+}
+
+
+
+
+/* 
+.selected {
+    background-color: rgb(243, 159, 4);
+} */

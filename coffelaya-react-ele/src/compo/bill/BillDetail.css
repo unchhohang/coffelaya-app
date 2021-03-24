@@ -1,0 +1,54 @@
+#billDetail {
+    margin-top: 30px;
+}
+
+#DandC {
+    margin: 20px;
+    padding-left: 20px;
+    font-family: Sans;
+}
+
+#discount {
+    display: block;
+    margin: 20px;
+}
+
+#credit {
+    display: block;
+    margin: 20px;
+    border-color: black;
+}
+
+#discountInp {
+    width: 100px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-width: 2px;
+}
+
+#creditInp {
+    width: 100px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-width: 2px;
+}
+
+#disType {
+    margin-left: 5px;
+}
+
+#billInfo, #billInfoCredit {
+    font-family: Sans;
+    margin: 20px;
+    padding-left: 20px;
+}
+
+#creditNameInp {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-width: 2px;
+    
+}

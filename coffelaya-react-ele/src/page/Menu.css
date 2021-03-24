@@ -1,0 +1,52 @@
+.buffer-div{
+    height: 4px;
+}
+
+.table-container{
+    overflow-y: scroll;
+    height: 450px;
+    width: auto;
+}
+
+
+.text{
+    position: relative;
+    text-align: center;
+}
+
+.input{
+    margin: 0px;
+    position: relative;
+    left: 35%;
+}
+
+#menu-item{
+    font-weight: bold;
+    margin: 10px;
+    text-align: right;
+    padding-right: 6px;
+    width: 50px;
+    
+}
+
+#menu-price{
+    font-weight: bold;
+    text-align: right;
+    padding-right: 6px;
+    margin: 10px;
+    
+}
+
+#inpItem{
+    border-radius: 3px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#inpPrice{
+    border-radius: 3px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}

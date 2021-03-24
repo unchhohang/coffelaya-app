@@ -1,0 +1,19 @@
+.entries-view{
+    margin-top: 10px;
+}
+
+#delete-view{
+    background-color: #C2F8FF;
+    margin-bottom: 30px;
+
+}
+
+#delete-btn{
+    position: relative;
+    left: 45%;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}

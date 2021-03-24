@@ -1,0 +1,54 @@
+#pay{
+    margin: 10px;
+    border-radius: 2px;
+}
+
+#payBtn{
+    padding: 5px;
+    height: 32px;
+    width: 90px;
+}
+
+.debtor-detail{
+    margin: 10px;
+    margin-top: 30px;
+}
+
+#debtor-name{
+    margin: 20px;
+    font-weight: bold;
+}
+
+#total-credit-credit{
+    margin: 20px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.price-detail{
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+#return-price{
+    background-color: #99CAFF;
+    border-radius: 3px;
+    margin-right: 4px;
+}
+
+#full-pay{
+    background-color: chartreuse;
+    border-radius: 3px;
+    color: blue;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#unfull-pay{
+    background-color: rgb(240, 100, 18);
+    border-radius: 3px;
+    color: white;
+    padding-left: 3px;
+    padding-right: 3px;
+
+}

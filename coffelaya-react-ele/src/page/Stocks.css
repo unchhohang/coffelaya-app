@@ -1,0 +1,63 @@
+#date {
+    margin: 10px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    
+}
+
+#date-picker {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#total-cost{
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    left: 70%;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.inputs{
+    position: relative;
+    left: 35%;
+}
+
+#ok{
+    position: relative;
+    left: 14%;
+    margin: 10px;
+}
+
+#stock-label{
+    font-weight: bold;
+    margin: 10px;
+}
+
+#stock{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 3px;
+    background-color: #F2F8F8;
+    
+}
+
+#cost-label{
+    margin: 10px;
+    font-weight: bold;
+    position: relative;
+    left: 8px;
+}
+
+#cost{
+    border-radius: 3px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    background-color: #F2F8F8;
+    position: relative;
+    left: 7px;
+
+}

@@ -1,0 +1,41 @@
+.bill-view {
+    border: solid;
+    border-radius: 3px;
+    margin-bottom: 7px;
+}
+
+.detail-board{
+    background-color: #EFF8FB;
+}
+
+.key {
+    position: relative;
+    right: 100px;
+    text-align: right;
+}
+
+.value {
+    position: relative;
+    right: 100px;
+}
+
+#total-price {
+    font-weight: bolder;
+}
+
+#credit-amount {
+    font-weight: bolder;
+}
+
+#disount {
+    font-weight: bolder;
+}
+
+#paid {
+    font-weight: bolder;
+}
+
+/* alarm icon */
+.bi-clock{
+    margin-left: 4px;
+}

@@ -1,0 +1,30 @@
+/* theses are all for radio group button */
+
+.time-button-wrapper {
+  clear: both;
+  display: inline-block;
+  position: relative;
+  left: 33%;
+  top: 30px
+}
+
+.timeButton {
+  position: absolute;
+  left: -9999em;
+  top: -9999em;
+}
+
+.timeButton+label {
+  float: left;
+  padding: .5em 1em;
+  cursor: pointer;
+  border: 1px solid #28608f;
+  margin-right: -1px;
+  color: #fff;
+  background-color: #5f42ca;
+}
+
+.timeButton:checked+label {
+  background-color: #57b332;
+}
+

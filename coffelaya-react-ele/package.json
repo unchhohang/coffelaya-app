@@ -1,0 +1,99 @@
+{
+  "name": "coffelaya-react-ele",
+  "version": "0.1.0",
+  "description": "My Electron app with react host on localhost:3000",
+  "private": true,
+  "license": "dummy app",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "electron-prompt": "^1.6.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "file-system": "^2.2.2",
+    "mdb-ui-kit": "^3.0.0",
+    "mongodb": "^3.6.3",
+    "nepali-date-converter": "^3.3.1",
+    "nepali-datepicker-reactjs": "^1.1.4",
+    "net": "^1.0.2",
+    "qs": "^6.5.2",
+    "react": "^17.0.1",
+    "react-autocomplete-hint": "^1.2.3",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "reactjs-popup": "^2.0.4",
+    "web-vitals": "^0.2.4"
+  },
+  "main": "./src/electron-starter.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "^11.1.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "foreman": "^3.0.1"
+  },
+  "proxy": "http://localhost:5000",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "coffelaya_react_ele"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+#paid-credit{
+    border: solid;
+    margin: 2px;
+    border-right: none;
+    border-left: none;
+}
+
+#unpaid-credit{
+    border: solid;
+    margin: 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}

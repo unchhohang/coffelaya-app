@@ -1,0 +1,47 @@
+#btnAddTable {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    position: relative;
+    left: 23%;
+}
+
+ul {
+    margin-block-start: 2px;
+    list-style-type: none;
+}
+
+li:hover {
+    position: relative;
+    left: 0.1px;
+    text-decoration: underline;
+}
+
+li:target {
+    position: relative;
+    right: 0.2in;
+    color: black;
+}
+
+li {
+    margin: 10px;
+    position: relative;
+    right: 25%;
+    color: white;
+    padding: 5px;
+    padding-left: 10px;
+    width: 100px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+#tableName {
+    border-radius: 15px;
+    border: none;
+}
+
+.selected {
+    background-color: rgb(243, 159, 4);
+}

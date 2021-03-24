@@ -1,0 +1,21 @@
+/* back and forward button */
+
+#btnBack {
+    position: relative;
+    left: 90px;
+}
+
+#btnForward {
+    position: relative;
+    left: 750px
+}
+
+#report-date{
+    display: inline-block;
+    position: relative;
+    left: 40%;
+    font-family: fantasy;
+    margin: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
