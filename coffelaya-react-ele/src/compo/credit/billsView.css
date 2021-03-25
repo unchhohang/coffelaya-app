@@ -4,7 +4,7 @@
     margin-bottom: 7px;
 }
 
-.detail-board{
+.detail-board {
     background-color: #EFF8FB;
 }
 
@@ -27,7 +27,6 @@
     font-weight: bolder;
 }
 
-
 #disount {
     font-weight: bolder;
 }
@@ -41,6 +40,14 @@
 }
 
 /* alarm icon */
-.bi-clock{
+
+.bi-clock {
     margin-left: 4px;
+}
+
+#highlightIt {
+    border-left-width: 50px;
+    border-right-width: 50px;
+    border-left-color: #0B2545;
+    border-right-color: #0B2545;
 }

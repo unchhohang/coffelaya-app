@@ -26,7 +26,7 @@ const BillsView = (props) => {
 
 
     return (
-        <div className={'bill-view'}>
+        <div className={'bill-view'} id={props.highlightState}>
             <div className={'detail-board'}>
                 <dl className="row">
                     <dt className="col-sm-3 key">Date:</dt>

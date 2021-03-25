@@ -1,0 +1,13 @@
+.total-container-credit {
+    margin: 20px;
+    margin-top: 40px;
+}
+
+#total-creditAmount {
+    margin: 20px;
+    border: solid;
+    border-color: black;
+    border-radius: 3px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

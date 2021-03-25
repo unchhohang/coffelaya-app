@@ -1,14 +1,20 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 import { Accordion, Button, Card } from 'react-bootstrap';
+import sumPrice from '../../js functions/sum';
 import DebtorComp from './debtorComp';
+import './creditView.css'
 
 const CreditView = (props) => {
     const [debtorList, setDebtorList] = useState([]);
+    const [unpaidAmount, setUnpaidAmount] = useState(0);
+    const [allRemainingMoney, setAllremainingMoney] = useState(0);
 
     useEffect(
         () => {
             getDebtorList();
+            getUnpaidAmount();
+            getAllRemainingMoney();
         }, []
     );
 
@@ -31,11 +37,40 @@ const CreditView = (props) => {
             .catch(err => console.log(err))
     }
 
+    function getUnpaidAmount() {
+        axios.get('/credit/')
+            .then(data => {
+                let unpaidAmountList = data.data.map(ele => {
+                    return (ele.creditAmount);
+                });
+
+                setUnpaidAmount(sumPrice(...unpaidAmountList));
+            })
+            .catch();
+    }
+
+    function getAllRemainingMoney() {
+        axios.get('/credit/moneyGiven/all')
+            .then(data => {
+                let allMoneyGivenList = data.data.map(ele => {
+                    return(ele.money);
+                });
+                setAllremainingMoney(sumPrice(...allMoneyGivenList));
+            })
+            .catch();
+    }
+
     return (
         (debtorList.length != 0) ?
-            <Accordion>
-                {displayDebtorName}
-            </Accordion>
+            <div>
+                <div className={'total-container-credit'}>
+                    <span id='total-creditAmount'>total credit to come : {unpaidAmount - allRemainingMoney}</span>
+                </div>
+                <Accordion>
+                    {displayDebtorName}
+                </Accordion>
+            </div>
+
 
             :
             <h1>wait for debtor component</h1>
