@@ -21,6 +21,7 @@ const BillsView = (props) => {
     let creditAmount = bill.creditAmount;
     let discount = bill.discount;
     let paid = bill.paidPrice;
+    let status = bill.status;
 
 
 
@@ -54,7 +55,10 @@ const BillsView = (props) => {
                     <dd className="col-sm-3 value" id='credit-amount'>{creditAmount}</dd>
 
                     <dt className="col-sm-3 key">Discount:</dt>
-                    <dd className="col-sm-9 value" id='disount'>{discount}</dd>
+                    <dd className="col-sm-3 value" id='disount'>{discount}</dd>
+
+                    <dt className="col-sm-3 key">Status:</dt>
+                    <dd className="col-sm-3 value" id='status'>{status}</dd>
 
                     <dt className="col-sm-3 key">Paid:</dt>
                     <dd className="col-sm-9 value" id='paid'>{paid}</dd>

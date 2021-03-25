@@ -1,6 +1,5 @@
 import React from 'react';
 import CreditView from '../compo/report/creditView';
-
 import SummaryView from '../compo/report/summaryView';
 
 const Report = (props) => {

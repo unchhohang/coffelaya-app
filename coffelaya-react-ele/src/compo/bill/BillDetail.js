@@ -1,10 +1,15 @@
-import { Col, Row } from "react-bootstrap"
+import { useState } from "react"
+import { Alert, Col, Row } from "react-bootstrap"
 import './BillDetail.css'
 import BillInfo from './BillInfo'
 import BillInfoCredit from './BillInfoCredit'
 import './SliderCss.css'
 
 const BillDetail = (props) => {
+
+    const [debtorNameWarning, setDebtorNameWarning] = useState(false);
+
+    let debtorList = props.debtorList;
 
     function onDiscountChange() {
         let discount = document.getElementById('discountInp').value;
@@ -14,8 +19,15 @@ const BillDetail = (props) => {
 
     function onCreditChange() {
         let creditPaidPrice = document.getElementById('creditInp').value;
-        let creditName = document.getElementById('creditNameInp').value;
+        let creditName = document.getElementById('creditNameInp').value.trim();
 
+        //check credit name
+        console.log(debtorList);
+        if (debtorList.includes(creditName.toUpperCase().trim())) {
+            setDebtorNameWarning(true)
+        } else {
+            setDebtorNameWarning(false)
+        }
 
         props.getCredit(creditPaidPrice, creditName);
     }
@@ -57,7 +69,7 @@ const BillDetail = (props) => {
                             <select
                                 id='disType'
                                 onChange={onDiscountChange}
-                                >
+                            >
                                 <option value='digit' >Digit</option>
                                 <option value='%' defaultValue>%</option>
 
@@ -91,6 +103,16 @@ const BillDetail = (props) => {
 
                                 />
                             </div>
+                            {
+                                debtorNameWarning ?
+                                    <div id='creditorName-warning'>
+                                        <Alert variant={'danger'}>
+                                            The name already exist if its a new person use another name
+                                        </Alert>
+                                    </div>
+                                    :
+                                    <div></div>
+                            }
 
                         </div>
 

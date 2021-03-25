@@ -50,11 +50,44 @@ const Entries = () => {
 
     function deleteEntries(billId) {
         let url = '/api/billing/' + billId;
+
+        axios.get(url)
+            .then(data => {
+                let debtorName = data.data.debtorName;
+
+                removeEntriesFromCollection(billId, debtorName);
+            })
+            .catch()
+
+
+    }
+
+    function removeEntriesFromCollection(billId, debtorName) {
+        let url = '/api/billing/' + billId;
+
         axios.delete(url)
             .then(() => {
+                segregateMoneyGiven(debtorName)
                 refreshEntries();
+
             })
             .catch(err => console.log(err))
+    }
+
+    function segregateMoneyGiven(debtorName) {
+        axios.get('/api/debtors')
+            .then(data => {
+                let debtorList = data.data
+
+                if (debtorList.includes(debtorName) == false) {
+                    let url = '/credit/moneyGiven/' + debtorName;
+
+                    axios.delete(url)
+                        .then(data => console.log('debtor is deleted from MoneyGiven collection : ' + debtorName))
+                        .catch(err => console.log(err));
+                }
+            })
+
     }
 
     return (
@@ -74,7 +107,7 @@ const Entries = () => {
                             billList={billList}
                             date={date}
                             deleteEntries={deleteEntries}
-                            />
+                        />
                         : <h1>No Entries to show</h1>
                 }
             </div>

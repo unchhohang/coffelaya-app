@@ -149,7 +149,7 @@ const Billing = (props) => {
         let credit = Math.abs(amountPrice - inpCreditPaidPrice);
 
         setCreditPrice(credit);
-        setCreditName(inpCreditName.toUpperCase());
+        setCreditName(inpCreditName.toUpperCase().trim());
     }
 
     function resetCredit() {
@@ -199,29 +199,39 @@ const Billing = (props) => {
 
         } else if (creditName != "" && creditPrice > 0 && items.length > 0 && paidPrice >= 0) {
 
-            
-                let url = '/api/billing/credit/' + bill._id;
-                axios.patch(url,
-                    {
-                        discount: discountPrice,
-                        debtorName: creditName,
-                        creditAmount: creditPrice,
-                        paidPrice: paidPrice,
-                        totalPrice: totalPrice,
-                        status: "onCredit"
-                    }
-                );
 
-                props.refreshBills();
-            
+            let url = '/api/billing/credit/' + bill._id;
+            axios.patch(url,
+                {
+                    discount: discountPrice,
+                    debtorName: creditName,
+                    creditAmount: creditPrice,
+                    paidPrice: paidPrice,
+                    totalPrice: totalPrice,
+                    status: "onCredit"
+                }
+            );
+
+            if (debtorList.includes(creditName) == false) {
+                let url = '/credit/moneyGiven/' + creditName
+                axios.post(url)
+                    .then(data => {
+                        console.log(data)
+                        console.log('data got inserted into moneyGiven model');
+                    })
+                    .catch(err => console.log(err));
+            }
+
+            props.refreshBills();
+
         }
 
 
     }
 
     //css for cancel button
-    const styleCancel ={
-        backgroundColor:"#FD5E7B",
+    const styleCancel = {
+        backgroundColor: "#FD5E7B",
         margin: "5px",
         borderTopLeftRadius: "500px",
         borderBottomLeftRadius: "500px"
@@ -244,7 +254,7 @@ const Billing = (props) => {
                             <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
                         </svg>
                     </span>
-                    <span style={{fontWeight: 'bold'}}>  Cancel</span>
+                    <span style={{ fontWeight: 'bold' }}>  Cancel</span>
                 </Button>
                 <BillTable
                     onDataChange={getBill}
@@ -265,6 +275,7 @@ const Billing = (props) => {
                     amountPrice={amountPrice}
                     paidPrice={paidPrice}
                     resetCredit={resetCredit}
+                    debtorList={debtorList}
                 />
                 <DoneButton
                     actionDone={actionDone}
@@ -274,8 +285,8 @@ const Billing = (props) => {
 
         );
     } else {
-    return (<h1>Loading...</h1>);
-}
+        return (<h1>Loading...</h1>);
+    }
 
 
 

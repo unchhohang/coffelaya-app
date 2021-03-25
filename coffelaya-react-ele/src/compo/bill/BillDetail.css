@@ -52,3 +52,10 @@
     border-bottom-width: 2px;
     
 }
+
+#creditorName-warning{
+    margin: 5px;
+    /* height: 25px;
+    padding-bottom: 0px;
+    width: 275px; */
+}

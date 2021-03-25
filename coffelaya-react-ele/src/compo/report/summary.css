@@ -1,8 +1,8 @@
-#sales-exepnses{
+#cash-sales-exepnses {
     margin: 50px
 }
 
-.sales{
+.sales {
     display: inline;
     border-radius: 20px;
     background-color: #F2E3A6;
@@ -10,15 +10,14 @@
     padding-bottom: 3px;
     position: relative;
     text-align: center;
-
 }
 
-#total-sales{
+#cash-sales {
     background-color: white;
     border-radius: 10px;
 }
 
-.expenses{
+.expenses {
     display: inline-block;
     border-radius: 20px;
     background-color: #B8CCCC;
@@ -26,13 +25,13 @@
     text-align: center;
 }
 
-#total-expenses{
+#total-expenses {
     display: inline-block;
     background-color: white;
     border-radius: 10px;
 }
 
-#profit{
+#profit {
     background-color: #D5E000;
     text-align: center;
     position: relative;
@@ -41,8 +40,17 @@
     width: 400px;
 }
 
-#total-credit{
+#total-credit {
     background-color: #EFD6AC;
+    text-align: center;
+    position: relative;
+    border-radius: 15px;
+    margin: auto;
+    width: 400px;
+}
+
+#total-sales {
+    background-color: #FFD166;
     text-align: center;
     position: relative;
     border-radius: 15px;

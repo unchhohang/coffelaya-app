@@ -1,5 +1,7 @@
 .navSide {
-    height: 700px;
+    position: sticky;
+    top: 0;
+    height: 630px;
     background-color: rgb(79, 79, 207);
     border-radius: 14px;
 }
