@@ -1,13 +1,21 @@
 .total-container-credit {
-    margin: 20px;
+    margin: 30px;
     margin-top: 40px;
 }
 
 #total-creditAmount {
     margin: 20px;
-    border: solid;
-    border-color: black;
     border-radius: 3px;
     margin-top: 40px;
     margin-bottom: 40px;
+    background-color: #DCFF5C;
+    padding: 10px;
+}
+
+#price-radius {
+    display: block;
+    background-color: #81B8EF;
+    border-radius: 100px;
+    padding: 20px;
+    font-weight: bolder;
 }

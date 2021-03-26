@@ -53,7 +53,7 @@ const CreditView = (props) => {
         axios.get('/credit/moneyGiven/all')
             .then(data => {
                 let allMoneyGivenList = data.data.map(ele => {
-                    return(ele.money);
+                    return (ele.money);
                 });
                 setAllremainingMoney(sumPrice(...allMoneyGivenList));
             })
@@ -64,7 +64,8 @@ const CreditView = (props) => {
         (debtorList.length != 0) ?
             <div>
                 <div className={'total-container-credit'}>
-                    <span id='total-creditAmount'>total credit to come : {unpaidAmount - allRemainingMoney}</span>
+                    <span id='total-creditAmount'>total credit to come :</span>
+                    <span id='price-radius'>{unpaidAmount - allRemainingMoney}</span>
                 </div>
                 <Accordion>
                     {displayDebtorName}
