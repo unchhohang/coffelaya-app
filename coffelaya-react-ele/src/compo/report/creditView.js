@@ -40,11 +40,14 @@ const CreditView = (props) => {
     function getUnpaidAmount() {
         axios.get('/credit/')
             .then(data => {
-                let unpaidAmountList = data.data.map(ele => {
-                    return (ele.creditAmount);
-                });
+                if (data.data.length != 0) {
 
-                setUnpaidAmount(sumPrice(...unpaidAmountList));
+                    let unpaidAmountList = data.data.map(ele => {
+                        return (ele.creditAmount);
+                    });
+
+                    setUnpaidAmount(sumPrice(...unpaidAmountList));
+                }
             })
             .catch();
     }
@@ -52,10 +55,13 @@ const CreditView = (props) => {
     function getAllRemainingMoney() {
         axios.get('/credit/moneyGiven/all')
             .then(data => {
-                let allMoneyGivenList = data.data.map(ele => {
-                    return (ele.money);
-                });
-                setAllremainingMoney(sumPrice(...allMoneyGivenList));
+                if (data.data.length != 0) {
+
+                    let allMoneyGivenList = data.data.map(ele => {
+                        return (ele.money);
+                    });
+                    setAllremainingMoney(sumPrice(...allMoneyGivenList));
+                }
             })
             .catch();
     }
