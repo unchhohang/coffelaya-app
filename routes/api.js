@@ -105,9 +105,6 @@ router.patch('/billing/orderList/:id', (req, res, next) => {
         { upsert: true })
         .then(data => res.json(data))
         .catch(next)
-
-
-
 });
 
 //Delete orderList data
@@ -131,6 +128,7 @@ router.patch('/billing/orderList/itemName/:orderId', (req, res, next) => {
         , { upsert: true }).then(data => res.json(data)).catch(next)
 });
 
+
 //update orderList rate only
 router.patch('/billing/orderList/rate/:orderId', (req, res, next) => {
     let filter = { "orderList._id": req.params.orderId }
@@ -153,6 +151,9 @@ router.patch('/billing/orderList/quantity/:orderId', (req, res, next) => {
         , { upsert: true }).then(data => res.json(data)).catch(next)
 });
 
+//update order list quantity through name
+
+
 //get all detors name
 router.get('/debtors', (req, res, next) => {
     Bill.distinct('debtorName')
@@ -160,23 +161,54 @@ router.get('/debtors', (req, res, next) => {
         .catch(next)
 });
 
-//Menu list
+//Menu list title and its child[item]
 router.get('/menu', (req, res, next) => {
     Menu.find({})
         .then(data => res.json(data))
         .catch(next)
 })
 
+//create title
 router.post('/menu', (req, res, next) => {
-    Menu.create({ "item": req.body.item, "price": req.body.price })
+    Menu.create({
+        "title": req.body.title
+    })
         .then(data => res.json(data))
         .catch(next)
 })
 
-router.delete('/menu/:id', (req, res, next) => {
-    Menu.deleteOne({"_id": req.params.id})
+//add items
+router.post('/menu/items', (req, res, next) => {
+    let filter = req.body.menuId;
+    let update = {
+        $push: {
+            items: {
+                item: req.body.item,
+                price: req.body.price
+            }
+        }
+    }
+
+    Menu.findByIdAndUpdate(filter, update)
         .then(data => res.json(data))
-        .catch(next)     
+        .catch(next)
+})
+
+//Delete a menu card
+router.delete('/menu/:id', (req, res, next) => {
+    Menu.deleteOne({ "_id": req.params.id })
+        .then(data => res.json(data))
+        .catch(next)
+})
+
+//delete a single menu
+router.delete('/menu/items/:menuId/:itemId', (req, res, next) => {
+    let filter = { _id: req.params.menuId };
+
+    Menu.findOneAndUpdate(filter, { $pull: { items: { _id: req.params.itemId } } })
+        .then(data => res.json(data))
+        .catch(next)
+
 })
 
 

@@ -1,0 +1,13 @@
+.order-details{
+    margin-bottom: 15px;
+}
+
+#order-name {
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#order-price {
+    color: #8127B9;
+    font-weight: bold;
+}

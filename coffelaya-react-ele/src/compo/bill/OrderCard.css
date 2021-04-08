@@ -1,0 +1,17 @@
+.order-card {
+    margin: 20px;
+    background-color: #EFD2E8;
+    border-radius: 10px;
+}
+
+.order-card>div {
+    margin: 20px;
+}
+
+#title {
+    position: relative;
+    left: 60px;
+    margin: 10px;
+    margin-bottom: 20px;
+    
+}

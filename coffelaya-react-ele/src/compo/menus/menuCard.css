@@ -1,0 +1,100 @@
+.menu-card {
+    margin: 10px;
+    background-color: blanchedalmond;
+    border-radius: 9px;
+}
+
+.menu-item {
+    width: 60%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.menu-price {
+    width: 60%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.add-card {
+    position: relative;
+    left: 40%;
+    bottom: 16px;
+}
+
+#inp-add-card {
+    width: 20%;
+    margin-top: 0;
+    padding-top: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: none;
+    border-style: inset;
+    border-width: 1px;
+}
+
+#cross-mCard {
+    position: relative;
+    left: 350px;
+    background-color: transparent;
+    border: none;
+    color: red;
+    margin: 10px
+}
+
+#cross-mCard:hover {
+    /* box-shadow: 0 0 0 2px #f90; */
+    background-color: #f90;
+}
+
+th {
+    background-color: #fff;
+    border-bottom: none;
+}
+
+#menuCard-table {
+    border-top: none;
+}
+
+.table td, .table th {
+    border-top: none;
+}
+
+thead {
+    position: none;
+}
+
+tbody {
+    background-color: #fff;
+}
+
+.title-bar {
+    background-color: #fff;
+}
+
+.add-title-btn {
+    background-color: #fff;
+}
+
+.table thead th {
+    border-bottom: none;
+}
+
+#true {
+    margin-bottom: 0px;
+}
+
+#menuCard-table-last {
+    margin-bottom: 0px;
+}
+
+#btn-remove-menu {
+    background-color: ;
+}
+
+#mCard-title {
+    padding-left: 10px;
+    font-weight: 10px;
+}
